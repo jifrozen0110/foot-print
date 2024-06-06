@@ -1,5 +1,9 @@
 name: Spring Boot Test with TestContainers
 
+on:
+  pull_request:
+    branches: [ develop ]
+
 jobs:
   build:
 
