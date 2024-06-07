@@ -1,0 +1,51 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    database: oracle
+    database-platform: org.hibernate.dialect.OracleDialect
+    open-in-view: false
+    properties:
+      hibernate:
+        default_batch_fetch_size: 100
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    hikari:
+      maximum-pool-size: 4
+logging:
+  level:
+    org:
+      hibernate: info
+
+---
+spring:
+  config.activate.on-profile: local
+  datasource:
+    url:
+    username:
+    password: 
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+---
+
+spring:
+  config.activate.on-profile: test
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+    database: oracle
+    generate-ddl: off
+
+logging:
+  level:
+    org:
+      hibernate: trace
