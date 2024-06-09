@@ -12,7 +12,6 @@ dependencies {
     runtimeOnly("com.oracle.database.jdbc:ojdbc10:19.21.0.0")
 }
 
-// kotlin으로 JPA를 사용할때 필요한 설정
 allOpen {
     annotation("jakarta.persistence.Entity")
     annotation("jakarta.persistence.Embeddable")

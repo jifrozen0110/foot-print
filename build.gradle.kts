@@ -1,8 +1,6 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
     kotlin("jvm")
-    kotlin("plugin.jpa")
+    kotlin("plugin.jpa") apply false
     kotlin("plugin.spring") apply false
     id("org.springframework.boot") apply false
     id("io.spring.dependency-management")
@@ -38,6 +36,7 @@ subprojects {
     apply(plugin = "io.spring.dependency-management")
     apply(plugin = "org.jetbrains.kotlin.jvm")
     apply(plugin = "org.jetbrains.kotlin.plugin.spring")
+    apply(plugin = "org.jetbrains.kotlin.plugin.jpa")
 
     dependencyManagement {
         val springCloudDependenciesVersion: String by project
@@ -59,6 +58,7 @@ subprojects {
         testImplementation("io.kotest:kotest-assertions-core:5.4.2")
         testImplementation("io.kotest.extensions:kotest-extensions-spring:1.1.2")
     }
+
     tasks.getByName("bootJar") {
         enabled = false
     }
