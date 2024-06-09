@@ -7,7 +7,8 @@ tasks.getByName("jar") {
 }
 
 dependencies {
-
+    implementation(project(":FootPrint-Domain"))
+    implementation(project(":FootPrint-Common"))
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0")
 }
